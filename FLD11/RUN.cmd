@@ -1,0 +1,34 @@
+@ECHO OFF
+
+REM DEL . DR
+
+SET /A ERRORLEV =19
+@ECHO "=================BEFORE> %ERRORLEVEL%"
+@ECHO "==========???? BEFORE> %ERRORLEV%"
+REM C:\WINDOWS\system32\cmd.exe /c RUN.cmd
+@ECHO hai
+FOR /L %%A IN (1,1,2) DO (
+	@ECHO "Attempt number = %%A"
+	REM FINDSTR /S "USA USA" LOG.log
+	REM FINDSTR /S "BLA BLA" LOG.log
+	REM FINDSTR /S "USA USA" LOG.log-- WORKING
+	FIND /N "USMAUSA" LO*.log
+	IF ERRORLEVEL 1 SET ERRORLEV=25
+	@ECHO "=================MID> %ERRORLEVEL%"
+	REM FINDSTR /S "USA USA" LO*.log >nul
+	FINDSTR /S "^USA USA$" LO*.log >nul
+	IF ERRORLEVEL 0 SET ERRORLEV=2555
+	GOTO :LABEL1
+	@ECHO %ERRORLEVEL%
+	
+	
+	TIMEOUT 10
+)
+
+:LABEL1
+
+@ECHO "=================AFTER> %ERRORLEVEL%"
+@ECHO %ERRORLEV%
+@ECHO endsssss
+
+GOTO :EOF

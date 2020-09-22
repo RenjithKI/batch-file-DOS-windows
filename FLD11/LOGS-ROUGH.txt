@@ -1,0 +1,17 @@
+IF /I %ERRORLEVEL% equ 0(
+	@ECHO "$$$$$$$$$$$$$$$$ %ERRORLEVEL%"
+	GOTO :LABEL1
+	)
+	
+	
+	IF %ERRORLEVEL% equ 0(
+	@ECHO "$$$$$$$$$$$$$$$$ %ERRORLEVEL%"
+	GOTO :LABEL1
+	)
+	
+	
+	FINDSTR /S "USA USA" LOG.log-- WORKING
+	
+	https://www.robvanderwoude.com/find.php
+	https://www.robvanderwoude.com/findstr.php
+	https://www.robvanderwoude.com/errorlevel.php

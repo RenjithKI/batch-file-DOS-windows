@@ -1,0 +1,9 @@
+UK UK
+CANADA CANADA
+IRELAND
+**********************************
+findstr pattern  filename
+findstr /I UK LOG.log
+USA USA
+
+https://www.windows-commandline.com/findstr-command-examples-regular/
